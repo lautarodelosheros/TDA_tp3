@@ -1,0 +1,4 @@
+Guadalajara,10
+Rio de Janeiro,7
+Moscu,3
+Venecia,1

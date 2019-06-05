@@ -1,0 +1,10 @@
+Buenos Aires,0
+Washington,0
+Miami,5
+Guadalajara,2
+Rio de Janeiro,8
+Moscu,6
+Lima,7
+Roma,1
+Venecia,7
+Paris,3

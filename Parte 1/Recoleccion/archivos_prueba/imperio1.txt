@@ -1,0 +1,5 @@
+Buenos Aires,0
+Miami,2
+Roma,1
+Lima,3
+Paris,1

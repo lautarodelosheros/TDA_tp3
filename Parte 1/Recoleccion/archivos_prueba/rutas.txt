@@ -1,0 +1,8 @@
+Miami,Buenos Aires,3
+Guadalajara,Miami,2
+Lima,Guadalajara,1
+Venecia,Lima,8
+Roma,Miami,3
+Lima,Rio de Janeiro,2
+Moscu,Washington,5
+Paris,Roma,10
