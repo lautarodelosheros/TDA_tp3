@@ -1,0 +1,4 @@
+Roma,7
+Londres,3
+Washington,5
+Rio de Janeiro,1

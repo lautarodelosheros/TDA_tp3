@@ -1,0 +1,9 @@
+Roma,5
+Rio de Jainero,7
+Madrid, 4
+Buenos Aires,6
+Montevideo,8
+Córdoba,6
+Paris,4
+Washington,7
+Londres,5

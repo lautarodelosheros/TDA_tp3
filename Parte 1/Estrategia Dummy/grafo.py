@@ -22,10 +22,17 @@ class Grafo:
 
     def agregar_arista(self, origen, destino, peso):
         arista = Arista(origen, destino, peso)
-        if origen in self.diccionario:
+        if origen in self.get_vertices():
             self.diccionario[origen].append(arista)
         else:
             self.diccionario[origen] = [arista]
+
+    def get_adyacentes(self, vertice):
+        adyacentes = []
+        if vertice in self.get_vertices():
+            for arista in self.diccionario[vertice]:
+                adyacentes.append(arista.destino)
+        return adyacentes
 
 class Arista:
 

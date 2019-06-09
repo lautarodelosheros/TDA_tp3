@@ -1,0 +1,4 @@
+Buenos Aires,3
+Córdoba,4
+Madrid,2
+Paris,5
