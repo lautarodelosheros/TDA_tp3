@@ -9,6 +9,11 @@ def guardar_ataque(jugador, origen, destino, ejercitos):
     archivo_ataque.write(origen + "," + destino + "," + str(ejercitos) + "\n")
     archivo_ataque.close()
 
+def calcular_ejercitos(ciudad, imperio):
+    if ciudad in imperio.keys():
+        return int(imperio[ciudad]) + 1
+    return 1
+
 def tactica(jugador, mapa, imperio1, imperio2):
     if jugador == "1":
         imperio = imperio1
@@ -22,9 +27,10 @@ def tactica(jugador, mapa, imperio1, imperio2):
         if ciudades_adyacentes:
             objetivos_validos = list(ciudades_adyacentes - imperio.keys())
             for ciudad_objetivo in objetivos_validos:
-                if int(imperio[ciudad_atacante]) > int(enemigo[ciudad_objetivo]):
-                    guardar_ataque(jugador, ciudad_atacante, ciudad_objetivo, enemigo[ciudad_objetivo] + 1)
-                    imperio[ciudad_atacante] -= enemigo[ciudad_objetivo] + 1
+                ejercitos_ataque = calcular_ejercitos(ciudad_objetivo, enemigo)
+                if int(imperio[ciudad_atacante]) > ejercitos_ataque:
+                    guardar_ataque(jugador, ciudad_atacante, ciudad_objetivo, ejercitos_ataque)
+                    imperio[ciudad_atacante] -= ejercitos_ataque
 
 
 def main():
@@ -33,9 +39,9 @@ def main():
         archivo_ciudades = open(sys.argv[2], "r")
         archivo_rutas = open(sys.argv[3], "r")
         archivo_imperio1 = open(sys.argv[4], "r")
-        # archivo_cosecha1 = open(sys.argv[5], "r")
+        archivo_cosecha1 = open(sys.argv[5], "r")
         archivo_imperio2 = open(sys.argv[6], "r")
-        # archivo_cosecha2 = open(sys.argv[7], "r")
+        archivo_cosecha2 = open(sys.argv[7], "r")
 
         mapa = Grafo()
 
@@ -64,9 +70,9 @@ def main():
         archivo_ciudades.close()
         archivo_rutas.close()
         archivo_imperio1.close()
-        # archivo_cosecha1.close()
+        archivo_cosecha1.close()
         archivo_imperio2.close()
-        # archivo_cosecha2.close()
+        archivo_cosecha2.close()
 
     else:
         print('Se necesitan 7 parametros: Numero de jugador, Archivo de ciudades, Archivo de rutas, Archivo de imperio 1, Archivo de cosecha de imperio 1, Archivo de imperio 2, Archivo de cosecha de imperio 2')
