@@ -6,3 +6,6 @@ Roma,Miami,3
 Lima,Rio de Janeiro,2
 Moscu,Washington,5
 Paris,Roma,10
+Detroit,Roma,20
+Roma,Detroit,10
+Detroit,Moscu,15
