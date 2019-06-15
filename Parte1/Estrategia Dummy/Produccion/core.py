@@ -53,7 +53,9 @@ def agregar_ciudad_lista_adyacencia(rutas, id_ciudad_origen, id_ciudad_destino, 
 def determinar_imperio(ciudad, imperios):
 	if(ciudad in imperios[0]):
 		return 1
-	return 2
+	elif(ciudad in imperios[1]):
+		return 2
+	return 0
 
 
 def numero_cercano_par(numero):

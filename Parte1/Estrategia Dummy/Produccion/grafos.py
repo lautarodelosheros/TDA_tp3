@@ -17,8 +17,12 @@ def calcular_desventaja(jugador, ciudades, rutas, imperios):
 	for ciudad_origen, ciudades_destino in rutas.items():
 		for ciudad_destino, capacidad in ciudades_destino.items():
 			jugador_dueño_origen = determinar_imperio(ciudad_origen, imperios) - 1
+			jugador_dueño_destino = determinar_imperio(ciudad_destino, imperios) - 1
 
-			if(jugador_dueño_origen != (determinar_imperio(ciudad_destino, imperios) - 1)):
+			if(jugador_dueño_origen == -1 or jugador_dueño_destino == -1):
+				continue
+
+			if(jugador_dueño_origen != jugador_dueño_destino):
 				agregar_ataques_potenciales(ataques_potenciales, ciudad_destino, imperios[jugador_dueño_origen][ciudad_origen]) 
 					
 	#Determinar cuales de esas ciudad son del jugador dado y calcular la desventaja

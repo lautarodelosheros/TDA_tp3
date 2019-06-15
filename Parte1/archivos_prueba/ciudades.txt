@@ -8,3 +8,4 @@ Lima,7
 Roma,1
 Venecia,7
 Paris,3
+Detroit,100
