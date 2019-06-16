@@ -1,5 +1,7 @@
 from grafos import *
 
+#Estas son algunas funciones de distintas complejidades que sirven para probar que el Ford-Fulkerson ande bien.
+
 def test_ford_fulkerson_1():
 	ciudades_ejemplo = {1: 1, 2:1, 3:1, 4:1}
 	rutas_ejemplo = {1: {2: 3, 3: 2},

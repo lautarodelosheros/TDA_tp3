@@ -16,6 +16,8 @@ def obtener_parametros(cantidad_parametros):
 
 	return parametros
 
+
+#Devuelve el ID asociado al nommbre de la ciudad.
 def determinar_id_ciudad(nombre_ciudad, equivalencias_ciudad_id):
 
 	return equivalencias_ciudad_id[nombre_ciudad]
@@ -49,7 +51,7 @@ def agregar_ciudad_lista_adyacencia(rutas, id_ciudad_origen, id_ciudad_destino, 
 	return
 
 
-
+#Determina a que imperio pertenece la ciudad (si es que pertenece a alguien).
 def determinar_imperio(ciudad, imperios):
 	if(ciudad in imperios[0]):
 		return 1

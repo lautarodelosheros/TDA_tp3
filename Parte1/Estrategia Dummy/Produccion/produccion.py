@@ -31,8 +31,8 @@ def main():
 	cosechas[1] = leer_cosecha(archivo_cosecha_2)
 	imperios[1] = leer_imperio(archivo_imperio_2, equivalencias_ciudad_id)
 
-	#actitud = determinar_estrategia()
-	actitud = ACTITUD_DEFENSIVA
+	#Determina si sera ofensivo o defensivo
+	actitud = determinar_estrategia()
 
 	actuar(numero_jugador, actitud, imperios, cosechas, ciudades, rutas)
 

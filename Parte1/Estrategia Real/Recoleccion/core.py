@@ -16,9 +16,11 @@ def obtener_parametros(cantidad_parametros):
 
 	return parametros
 
+#Devuelve el ID asociado al nommbre de la ciudad.
 def determinar_id_ciudad(nombre_ciudad, equivalencias_ciudad_id):
 
 	return equivalencias_ciudad_id[nombre_ciudad]
+
 
 def existe_nodo(lista, indice):
 	
@@ -29,6 +31,7 @@ def existe_nodo(lista, indice):
 
 	return True
 
+#Determina el ID de la ultima ciudad
 def maximo_indice_diccionario(diccionario):
 	
 	maximo_indice = 0
@@ -39,6 +42,7 @@ def maximo_indice_diccionario(diccionario):
 
 	return maximo_indice
 
+#Agrega una arista entre ciudad origen y ciudad_destino.
 def agregar_ciudad_lista_adyacencia(rutas, id_ciudad_origen, id_ciudad_destino, capacidad):
 	
 	if(not id_ciudad_origen in rutas):

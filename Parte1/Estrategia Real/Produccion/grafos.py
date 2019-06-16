@@ -1,6 +1,9 @@
 from core import *
 	
-#Permite al jugador saber cuantos ejercitos podrian atacar cada ciudad propia.
+#Permite al jugador saber cuantos ejercitos enemigos podrian atacar cada ciudad propia.
+#Las desventajas criticas son las que se dan en ciudades vecinas a su metropolis.
+#Las otras son no criticas.
+#Desventaja negativa implica que el jugador tiene mas unidades que su enemigo.
 def calcular_desventaja(jugador, ciudades, rutas, imperios):
 
 	ciudades_vecina_metropolis = []

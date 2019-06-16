@@ -7,6 +7,7 @@ def calcular_grafo_residual(rutas):
 
 	for ciudad_origen, ciudades_destino in rutas.items():
 		for ciudad_destino, capacidad in ciudades_destino.items():
+			#Por simplicidad siempre estan las dos aristas (Backward y Forward)
 			agregar_ciudad_lista_adyacencia(rutas_grafo_residual, ciudad_origen, ciudad_destino, capacidad)
 			agregar_ciudad_lista_adyacencia(rutas_grafo_residual, ciudad_destino, ciudad_origen, 0)
 
@@ -31,7 +32,7 @@ def actualizar_grafo_residual(rutas, rutas_grafo_residual, cuello_de_botella, tr
 		ciudad_anterior = ciudad
 	
 
-
+#Determina la minima capacidad del trayecto
 def determinar_cuello_botella(rutas_grafo_residual, trayecto):
 
 	cuello_de_botella = 0
@@ -89,6 +90,7 @@ def BFS(ciudades, rutas, origen, destino):
 
 	return ruta_llegada
 
+#Recorre uno de los trayectos_st en sentido contrario armando dicho trayecto
 def determinar_trayecto_st(trayectos_st, origen, destino):
 
 	if(len(trayectos_st[destino]) == 0):
@@ -125,12 +127,14 @@ def ford_fulkerson(ciudades, rutas, origen, destino):
 
 		trayecto_st = determinar_trayecto_st(trayectos_st, origen, destino)
 
+		#Solo hace falta recalcular los trayectos si no hay mas en los obtenidos anteriormente
 		if(not trayecto_st):
 			trayectos_st = BFS(ciudades, rutas_grafo_residual, origen, destino)
 			trayecto_st = determinar_trayecto_st(trayectos_st, origen, destino)
 
 		i += 1
 
+	#Para saber el flujo total se suman todos los flujos entrantes a la metropolis.
 	flujo_total = 0
 	flujos = rutas_grafo_residual[destino]
 	for ciudad, flujo in flujos.items():

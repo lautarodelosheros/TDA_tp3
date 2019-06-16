@@ -1,9 +1,8 @@
 import random
 import math
-from constantes import *
 from core import *
 
-
+#Lee las ciudades y arma la lista de equivalencias Ciudad-ID
 def leer_ciudades(nombre_archivo):
 	
 	lista_ciudades = []
@@ -52,7 +51,7 @@ def leer_imperio(nombre_archivo, equivalencias_ciudad_id):
 
 	return imperio
 
-#Las unicas rutas importantes en este paso del juego son las que unen dos ciudades pertenecientes al imperio del jugador
+
 
 def leer_rutas(nombre_archivo, equivalencias_ciudad_id, imperio):
 
@@ -68,6 +67,7 @@ def leer_rutas(nombre_archivo, equivalencias_ciudad_id, imperio):
 		id_ciudad_origen = determinar_id_ciudad(partes[0], equivalencias_ciudad_id)
 		id_ciudad_destino = determinar_id_ciudad(partes[1], equivalencias_ciudad_id)
 		
+		#Las unicas rutas importantes en este paso del juego son las que unen dos ciudades pertenecientes al imperio del jugador
 		if(id_ciudad_origen in imperio and id_ciudad_destino in imperio):
 			agregar_ciudad_lista_adyacencia(rutas, id_ciudad_origen, id_ciudad_destino, capacidad_transporte)
 

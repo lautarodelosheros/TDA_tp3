@@ -1,6 +1,7 @@
 import operator
 from core import *
 
+#Saca las ciudades del rival de la lista de ciudades. No son necesarias.
 def filtrar_ciudades_rival(ciudades, imperio, numero_jugador):
 
 	ciudades_jugador = {}

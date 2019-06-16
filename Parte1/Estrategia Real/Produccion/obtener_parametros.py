@@ -3,7 +3,7 @@ import math
 from constantes import *
 from core import *
 
-
+#Lee las ciudades y arma la lista de equivalencias Ciudad-ID
 def leer_ciudades(nombre_archivo):
 	
 	lista_ciudades = []
