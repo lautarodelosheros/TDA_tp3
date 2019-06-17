@@ -65,9 +65,6 @@ def obtener_ciudades_con_camino_de_ida_y_vuelta_a_metropoli(metropoli, lista_ciu
 
         else: lista_ciudades_no_conectadas_con_metropoli_ida_vuelta.append(ciudad)
 
-    print(lista_ciudades_conectadas_con_metropoli_ida_vuelta)
-    print(lista_ciudades_no_conectadas_con_metropoli_ida_vuelta)
-
     return lista_ciudades_conectadas_con_metropoli_ida_vuelta + lista_ciudades_no_conectadas_con_metropoli_ida_vuelta
 
 def obtener_ciudades_que_se_conectan_con_metropoli(lista_ciudades_priorizadas_por_camino_de_ida_y_vuelta_con_metropoli, grafo_ciudades, metropoli):
