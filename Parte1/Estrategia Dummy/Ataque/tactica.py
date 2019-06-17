@@ -14,7 +14,7 @@ def calcular_ejercitos(ciudad, imperio):
         return int(imperio[ciudad]) + 1
     return 1
 
-def tactica(jugador, mapa, imperio1, imperio2):
+def tactica(jugador, mapa, imperio1, imperio2, metropoli1, metropoli2):
     if jugador == "1":
         imperio = imperio1
         enemigo = imperio2
@@ -25,7 +25,7 @@ def tactica(jugador, mapa, imperio1, imperio2):
     for ciudad_atacante in imperio.keys():
         ciudades_adyacentes = mapa.get_adyacentes(ciudad_atacante)
         if ciudades_adyacentes:
-            objetivos_validos = list(ciudades_adyacentes - imperio.keys())
+            objetivos_validos = list(ciudades_adyacentes - imperio.keys() - {metropoli1, metropoli2})
             for ciudad_objetivo in objetivos_validos:
                 ejercitos_ataque = calcular_ejercitos(ciudad_objetivo, enemigo)
                 if int(imperio[ciudad_atacante]) > ejercitos_ataque:
@@ -54,18 +54,22 @@ def main():
             mapa.agregar_arista(ciudad1, ciudad2, int(capacidad))
 
         imperio1 = {}
+        (metropoli1, ejercitos1) = archivo_imperio1.readline().split(',')
+        imperio1[metropoli1] = int(ejercitos1)
         for linea in archivo_imperio1.readlines():
             (ciudad, ejercitos) = linea.split(',')
             imperio1[ciudad] = int(ejercitos)
 
         imperio2 = {}
+        (metropoli2, ejercitos2) = archivo_imperio2.readline().split(',')
+        imperio1[metropoli2] = int(ejercitos2)
         for linea in archivo_imperio2.readlines():
             (ciudad, ejercitos) = linea.split(',')
             imperio2[ciudad] = int(ejercitos)
 
         open("ataque" + str(jugador) + ".txt", "w")
 
-        tactica(jugador, mapa, imperio1, imperio2)
+        tactica(jugador, mapa, imperio1, imperio2, metropoli1, metropoli2)
 
         archivo_ciudades.close()
         archivo_rutas.close()
