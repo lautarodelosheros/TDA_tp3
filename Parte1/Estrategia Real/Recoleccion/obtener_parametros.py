@@ -25,14 +25,14 @@ def leer_ciudades(nombre_archivo):
 
 
 def leer_cosecha(nombre_archivo):
-	
-	cosecha_actual = 0
 
-	archivo = open(nombre_archivo, 'r')
+	try:
+		archivo = open(nombre_archivo, 'r')
+		cosecha_actual = int(archivo.readline().rstrip())
 
-	cosecha_actual = int(archivo.readline().rstrip())
-
-	archivo.close()
+		archivo.close()
+	except FileNotFoundError:
+		cosecha_actual = 0
 
 	return cosecha_actual
 
